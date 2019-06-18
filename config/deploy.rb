@@ -16,7 +16,7 @@ set :format_options, command_output: true, log_file: "log/capistrano.log", color
 # set :pty, true
 
 # Default value for :linked_files is []
-append :linked_files, %w[config/database.yml config/secrets.yml]
+set :linked_files, %w[config/database.yml config/secrets.yml]
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 set :keep_releases, 5
