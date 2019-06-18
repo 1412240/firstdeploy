@@ -18,4 +18,4 @@ set :enable_ssl, false
 
 
 
-server '13.228.73.225', user: 'ubuntu', roles: %w{app db web}
+server '13.250.118.101', user: 'ubuntu', roles: %w{app db web}
