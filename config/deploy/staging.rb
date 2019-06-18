@@ -8,7 +8,9 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 set :stage, :staging
 set :branch, 'master'
-set :rbenv_ruby, '2.6.3'
+set :ruby_version, '/usr/local/ruby200/bin'
+set :default_env, -> {{ path: [fetch(:ruby_version), "#{release_path}/bin", "$PATH"].join(":") }}
+
 
 set :rails_env, :staging
 set :environment, "staging"
