@@ -13,11 +13,17 @@ set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 
 # Default value for :pty is false
-# set :pty, true
+set :keep_releases, 5
+
 
 # Default value for :linked_files is []
 set :linked_files, %w[config/database.yml config/secrets.yml]
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
-set :keep_releases, 5
+namespace :deploy do
+  desc 'restart application'
+  task :restart, role: :app do
+    invoke 'puma:restart'
+  end
+end
 
