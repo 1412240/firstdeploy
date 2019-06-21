@@ -8,7 +8,7 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 set :stage, :staging
 set :branch, 'master'
-set :rbenv_ruby, '2.6.3'
+set :rbenv_ruby, '2.5.5'
 
 set :rails_env, :staging
 set :environment, "staging"
@@ -16,6 +16,4 @@ set :environment, "staging"
 # config file
 set :enable_ssl, false
 
-
-
-server '13.250.118.101', user: 'ubuntu', roles: %w{app db web}
+server '127.0.0.1', user: 'ubuntu', roles: %w{app db web}, port: 21
