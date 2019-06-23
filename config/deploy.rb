@@ -17,7 +17,7 @@ set :keep_releases, 5
 
 
 # Default value for :linked_files is []
-set :linked_files, %w[config/database.yml]
+set :linked_files, %w[config/database.yml config/secrets.yml]
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
 
 namespace :deploy do
